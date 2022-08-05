@@ -24,7 +24,7 @@ class Piece:
     def set_coordinates(self,x_pos,y_pos):
         self.x = x_pos
         self.y = y_pos
-        return self.x,self.y
+        return self.x, self.y
 
 
 

@@ -5,16 +5,17 @@ from pygame.locals import *
 import sys
 from pygame.sprite import Sprite
 from Bishop import Bishop
-from Pawn import Pawn
-from Horse import Horse
+from BlackHorse import BlackHorse
 from Rook import Rook
 from Queen import Queen
 from King import King
+from WhiteHorse import WhiteHorse
 from WhitePawn import WhitePawn
-
+from BlackPawn import BlackPawn
+from util import display
 pygame.init()
 
-display = pygame.display.set_mode((1000, 700))
+
 FPS_CLOCK = pygame.time.Clock()
 pygame.display.set_caption("Chess")
 background_image = pygame.image.load("images\chess.bmp")
@@ -27,28 +28,28 @@ location = ()
 # the black pawns objects//////////////////////////////
 pawn_objects = []  # black pawns array
 
-black_pawn1 = Pawn("black", "bp1")
+black_pawn1 = BlackPawn("black", "bp1")
 pawn_objects.append(black_pawn1)
-black_pawn2 = Pawn("black", "bp2")
+black_pawn2 = BlackPawn("black", "bp2")
 pawn_objects.append(black_pawn2)
-black_pawn3 = Pawn("black", "bp3")
+black_pawn3 = BlackPawn("black", "bp3")
 pawn_objects.append(black_pawn3)
-black_pawn4 = Pawn("black", "bp4")
+black_pawn4 = BlackPawn("black", "bp4")
 pawn_objects.append(black_pawn4)
-black_pawn5 = Pawn("black", "bp5")
+black_pawn5 = BlackPawn("black", "bp5")
 pawn_objects.append(black_pawn5)
-black_pawn6 = Pawn("black", "bp6")
+black_pawn6 = BlackPawn("black", "bp6")
 pawn_objects.append(black_pawn6)
-black_pawn7 = Pawn("black", "bp7")
+black_pawn7 = BlackPawn("black", "bp7")
 pawn_objects.append(black_pawn7)
-black_pawn8 = Pawn("black", "bp8")
+black_pawn8 = BlackPawn("black", "bp8")
 pawn_objects.append(black_pawn8)
 
 # the black horsses objects///////////////////
 horse_objects = []  # black horses array //////////////
-black_horse_left = Horse("black", "bhl")
+black_horse_left = BlackHorse("black", "bhl")
 horse_objects.append(black_horse_left)
-black_horse_right = Horse("black", "bhr")
+black_horse_right = BlackHorse("black", "bhr")
 horse_objects.append(black_horse_right)
 
 # Black Bishops objects ////////////////
@@ -94,10 +95,10 @@ white_pawn_objects.append(white_pawn7)
 white_pawn8 = WhitePawn("white", "wp8")
 white_pawn_objects.append(white_pawn8)
 
-# the white horsses objects///////////////////
-white_horse_left = Horse("white", "whl")
+# the white horses objects///////////////////
+white_horse_left = WhiteHorse("white", "whl")
 horse_objects.append(white_horse_left)
-white_horse_right = Horse("white", "whr")
+white_horse_right = WhiteHorse("white", "whr")
 horse_objects.append(white_horse_right)
 
 # White Bishops objects ////////////////
@@ -322,116 +323,32 @@ def check_selected_object(x, y):
     check whether the user selected a piece
     :param x:
     :param y:
-    :return: The id of a selected piece
+    :return: The selected object, None otherwise
     """
-    s = ""
     for i in range(8):
         if pawn_objects[i].is_selected(x, y):
             s = pawn_objects[i].piece_id
+            return pawn_objects[i]
     for i in range(8):
         if white_pawn_objects[i].is_selected(x, y):
-            s = white_pawn_objects[i].piece_id
+            return white_pawn_objects[i]
     for i in range(4):
         if horse_objects[i].is_selected(x, y):
-            s = horse_objects[i].piece_id
-    return s
+            return horse_objects[i]
+
+    return None
 
 
 def identify_piece(x, y):
     """
-    Show the possible moves
-    :param x:
-    :param y:
+    Show the possible moves of selected piece
+    :param x: mouse_click x_position
+    :param y: mouse_click y_position
     :return:
     """
-    id_got = check_selected_object(x, y)
-    if id_got == "bp1":
-        pawn = Pawn("none", "bp1")
-        display.blit(pawn.draw_piece(), (pawn.set_coordinates(black_pawn1_x + 18, black_pawn1_y - 60)))
-        return x, y
-    elif id_got == "bp2":
-        pawn = Pawn("none", "bp2")
-        display.blit(pawn.draw_piece(), (pawn.set_coordinates(black_pawn2_x + 18, black_pawn2_y - 60)))
-        return x, y
-    elif id_got == "bp3":
-        pawn = Pawn("none", "bp3")
-        display.blit(pawn.draw_piece(), (pawn.set_coordinates(black_pawn3_x + 18, black_pawn3_y - 60)))
-        return x, y
-    elif id_got == "bp4":
-        pawn = Pawn("none", "bp4")
-        display.blit(pawn.draw_piece(), (pawn.set_coordinates(black_pawn4_x + 18, black_pawn4_y - 60)))
-        return x, y
-    elif id_got == "bp5":
-        pawn = Pawn("none", "bp5")
-        display.blit(pawn.draw_piece(), (pawn.set_coordinates(black_pawn5_x + 18, black_pawn5_y - 60)))
-        return x, y
-    elif id_got == "bp6":
-        pawn = Pawn("none", "bp6")
-        display.blit(pawn.draw_piece(), (pawn.set_coordinates(black_pawn6_x + 18, black_pawn6_y - 60)))
-        return x, y
-    elif id_got == "bp7":
-        pawn = Pawn("none", "bp7")
-        display.blit(pawn.draw_piece(), (pawn.set_coordinates(black_pawn7_x + 18, black_pawn7_y - 60)))
-        return x, y
-    elif id_got == "bp8":
-        pawn = Pawn("none", "bp8")
-        display.blit(pawn.draw_piece(), (pawn.set_coordinates(black_pawn8_x + 18, black_pawn8_y - 60)))
-        return x, y
-    elif id_got == "wp1":
-        pawn = Pawn("none", "wp1")
-        display.blit(pawn.draw_piece(), (pawn.set_coordinates(white_pawn1_x + 18, white_pawn1_y + 90)))
-        return x, y
-    elif id_got == "wp2":
-        pawn = Pawn("none", "wp2")
-        display.blit(pawn.draw_piece(), (pawn.set_coordinates(white_pawn2_x + 18, white_pawn2_y + 90)))
-        return x, y
-    elif id_got == "wp3":
-        pawn = Pawn("none", "wp3")
-        display.blit(pawn.draw_piece(), (pawn.set_coordinates(white_pawn3_x + 18, white_pawn3_y + 90)))
-        return x, y
-    elif id_got == "wp3":
-        pawn = Pawn("none", "wp3")
-        display.blit(pawn.draw_piece(), (pawn.set_coordinates(white_pawn3_x + 18, white_pawn3_y + 90)))
-        return x, y
-    elif id_got == "wp4":
-        pawn = Pawn("none", "wp4")
-        display.blit(pawn.draw_piece(), (pawn.set_coordinates(white_pawn4_x + 18, white_pawn4_y + 90)))
-        return x, y
-    elif id_got == "wp5":
-        pawn = Pawn("none", "wp5")
-        display.blit(pawn.draw_piece(), (pawn.set_coordinates(white_pawn5_x + 18, white_pawn5_y + 90)))
-        return x, y
-    elif id_got == "wp6":
-        pawn = Pawn("none", "wp6")
-        display.blit(pawn.draw_piece(), (pawn.set_coordinates(white_pawn6_x + 18, white_pawn6_y + 90)))
-        return x, y
-    elif id_got == "wp7":
-        pawn = Pawn("none", "wp7")
-        display.blit(pawn.draw_piece(), (pawn.set_coordinates(white_pawn7_x + 18, white_pawn7_y + 90)))
-        return x, y
-    elif id_got == "wp8":
-        pawn = Pawn("none", "wp8")
-        display.blit(pawn.draw_piece(), (pawn.set_coordinates(white_pawn8_x + 18, white_pawn8_y + 90)))
-        return x, y
-
-    # Horses
-    elif id_got == "bhl":
-        horse = Horse("none", "bhl")
-        display.blit(horse.draw_piece(), (horse.set_coordinates(black_horse_left_x + 105, black_horse_left_y - 130)))
-        display.blit(horse.draw_piece(), (horse.set_coordinates(black_horse_left_x - 70, black_horse_left_y - 130)))
-    elif id_got == "bhr":
-        horse = Horse("none", "bhr")
-        display.blit(horse.draw_piece(), (horse.set_coordinates(black_horse_right_x + 105, black_horse_right_y - 130)))
-        display.blit(horse.draw_piece(), (horse.set_coordinates(black_horse_right_x - 70, black_horse_right_y - 130)))
-    elif id_got == "whl":
-        horse = Horse("none", "whl")
-        display.blit(horse.draw_piece(), (horse.set_coordinates(white_horse_left_x + 105, white_horse_left_y + 160)))
-        display.blit(horse.draw_piece(), (horse.set_coordinates(white_horse_left_x - 73, white_horse_left_y + 160)))
-    elif id_got == "whr":
-        horse = Horse("none", "whr")
-        display.blit(horse.draw_piece(), (horse.set_coordinates(white_horse_right_x + 105, white_horse_right_y + 160)))
-        display.blit(horse.draw_piece(), (horse.set_coordinates(white_horse_right_x - 73, white_horse_right_y + 160)))
-
+    selectedPiece = check_selected_object(x, y)
+    if (selectedPiece != None):
+        selectedPiece.draw_possible_moves()
 
 def move_piece(x, y, id):
     """
@@ -547,7 +464,7 @@ while True:  # Game main loop
             clicks.append(y)
             counter += 1
             if counter == 2:
-                move_piece(clicks[2], clicks[3], check_selected_object(clicks[0], clicks[1]))
+                move_piece(clicks[2], clicks[3], check_selected_object(clicks[0], clicks[1]).piece_id )
                 clicks = []
                 counter = 0
 

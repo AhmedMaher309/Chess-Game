@@ -1,8 +1,5 @@
 import pygame
-from pygame.locals import *
-import sys
-
-pygame.init()
+from util import display
 
 from Pieces import Piece
 
@@ -29,10 +26,8 @@ class Pawn(Piece):
         self.x = x
         self.y = y
 
-    def is_selected(self, click_x, click_y):
-        return (self.x <= click_x) and (self.x >= click_x - 100) and (self.y <= click_y + 5)\
-               and (self.y >= click_y - 70)
 
-# def valid_moves(self):
-#  red_pic = pygame.image.load("images\pred.bmp")
-# red_pic = pygame.transform.scale(red_pic, (320, 320))
+
+    # def valid_moves(self):
+    #  red_pic = pygame.image.load("images\pred.bmp")
+    # red_pic = pygame.transform.scale(red_pic, (320, 320))
