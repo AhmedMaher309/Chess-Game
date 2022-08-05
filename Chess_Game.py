@@ -217,7 +217,7 @@ white_king_x = 390
 white_king_y = 20
 
 
-def set_peice_position(): # Draw  the chess pieces in their initial positions 
+def set_piece_position(): # Draw  the chess pieces in their initial positions
     # the black pawns /////////////
     black_pawn1.draw_piece()
     display.blit(black_pawn1.draw_piece(), (black_pawn1.set_coordinates(black_pawn1_x, black_pawn1_y)))  # first black pawn
@@ -309,24 +309,36 @@ def set_peice_position(): # Draw  the chess pieces in their initial positions
 
 
 
-def check_object_selected(x,y): # check wether the user selected a piece
+def check_object_selected(x,y):
+    """
+    check whether the user selected a piece
+    :param x:
+    :param y:
+    :return: The id of a selected piece
+    """
     s=""
     for i in range(8):
         if  pawn_objects[i].x <=x and pawn_objects[i].x >=x-100 and pawn_objects[i].y <=y+5 and pawn_objects[i].y>=y-70: 
-            s = pawn_objects[i].id
+            s = pawn_objects[i].piece_id
     for i in range(8):
         if  white_pawn_objects[i].x <=x and white_pawn_objects[i].x >=x-100 and white_pawn_objects[i].y <=y-20 and white_pawn_objects[i].y>=y-100: 
-            s = white_pawn_objects[i].id
+            s = white_pawn_objects[i].piece_id
     for i in range(4):
         if horse_objects[i].x <=x-10 and horse_objects[i].x >=x-100 and  horse_objects[i].y <=y-30 and horse_objects[i].y>=y-100: 
-            s = horse_objects[i].id
+            s = horse_objects[i].piece_id
     return s
 
 
-def identify_peice(x,y):  # identify which piece the user has chosen and show the possible moves
-    id_got=check_object_selected(x,y)
-    if id_got =="bp1":
-        pawn = Pawn("none","bp1")
+def identify_piece(x, y):
+    """
+    identify which piece the user has chosen and show the possible moves
+    :param x:
+    :param y:
+    :return:
+    """
+    id_got = check_object_selected(x, y)
+    if id_got == "bp1":
+        pawn = Pawn("none", "bp1")
         display.blit(pawn.draw_piece(), (pawn.set_coordinates(black_pawn1_x + 18, black_pawn1_y - 60)))
         return x,y
     elif id_got =="bp2":
@@ -413,7 +425,7 @@ def identify_peice(x,y):  # identify which piece the user has chosen and show th
         display.blit(horse.draw_piece(), (horse.set_coordinates(white_horse_right_x - 73, white_horse_right_y + 160)))
 
 
-def move_peice(x,y,id):
+def move_piece(x, y, id):
     # for pawns
     if id=="bp1":
         global black_pawn1_y 
@@ -512,18 +524,18 @@ def move_peice(x,y,id):
 
 while True:  # Game main loop
     display.blit(background_image,(1,0))
-    set_peice_position()
+    set_piece_position()
     for event in pygame.event.get():
         if event.type == MOUSEBUTTONDOWN:  #check if the mouse was pressed
-            x , y = pygame.mouse.get_pos()
-            check_object_selected(x,y)
-            identify_peice(x,y)
-            location = (x,y)
+            x, y = pygame.mouse.get_pos()
+            check_object_selected(x, y)
+            identify_piece(x, y)
+            location = (x, y)
             clicks.append(x)
             clicks.append(y)
             counter += 1
             if counter == 2:
-                move_peice(clicks[2],clicks[3],check_object_selected(clicks[0],clicks[1]))
+                move_piece(clicks[2], clicks[3], check_object_selected(clicks[0], clicks[1]))
                 clicks =[]
                 counter = 0
             
