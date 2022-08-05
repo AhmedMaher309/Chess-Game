@@ -3,20 +3,18 @@ from pygame.locals import *
 import sys
 pygame.init()
 
-from Peices import Piece
+from Pieces import Piece
 
 class Rook(Piece):
-   def __init__(self,colour,id):
-       self.rook_colour=colour
-       self.id = id
-       self.is_active = 1
+   def __init__(self, colour, rook_id):
+       super().__init__(colour, rook_id)
 
-   def draw_peice(self):
+   def draw_piece(self):
        l=110
        w=90
-       if self.rook_colour=="black":
+       if self.colour == "black":
            piece_pic = pygame.image.load("images\BlackRook.bmp")
-       elif self.rook_colour=="white":
+       elif self.colour == "white":
             piece_pic = pygame.image.load("images\WhiteRook.bmp")
        else:
             piece_pic = pygame.image.load("images\pred.bmp")

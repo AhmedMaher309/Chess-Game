@@ -3,20 +3,18 @@ from pygame.locals import *
 import sys
 pygame.init()
 
-from Peices import Piece
+from Pieces import Piece
 
 class Horse(Piece):
-   def __init__(self,colour,id):
-       self.horse_colour=colour
-       self.id = id
-       self.is_active =1
+   def __init__(self, colour, horse_id):
+       super().__init__(colour, horse_id)
 
-   def draw_peice(self):
+   def draw_piece(self):
         l=110
         w=90
-        if self.horse_colour=="black":
+        if self.colour == "black":
            piece_pic = pygame.image.load("images\Horse.bmp")
-        elif self.horse_colour =="white":
+        elif self.colour == "white":
             piece_pic = pygame.image.load("images\whiteHorse.bmp")
         else:
             piece_pic = pygame.image.load("images\pred.bmp")

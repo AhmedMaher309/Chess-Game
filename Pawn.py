@@ -3,20 +3,18 @@ from pygame.locals import *
 import sys
 pygame.init()
 
-from Peices import Piece
+from Pieces import Piece
 
 class Pawn(Piece):
-   def __init__(self,colour,id):
-       self.pawn_colour=colour
-       self.id = id
-       self.is_active = 1
+   def __init__(self, colour, pawn_id):
+       super().__init__(colour, pawn_id)
 
-   def draw_peice(self):
+   def draw_piece(self):
        l=120
        w=100
-       if self.pawn_colour=="black":
+       if self.colour == "black":
            piece_pic = pygame.image.load("images\pawn.bmp")
-       elif self.pawn_colour=="white":
+       elif self.colour == "white":
             piece_pic = pygame.image.load("images\whitePawn.bmp")
        else:
             piece_pic = pygame.image.load("images\pred.bmp")

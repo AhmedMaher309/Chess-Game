@@ -219,93 +219,93 @@ white_king_y = 20
 
 def set_peice_position(): # Draw  the chess pieces in their initial positions 
     # the black pawns /////////////
-    black_pawn1.draw_peice()
-    display.blit(black_pawn1.draw_peice() ,(black_pawn1.set_coordinates(black_pawn1_x ,black_pawn1_y)))  # first black pawn
-    black_pawn2.draw_peice()
-    display.blit(black_pawn2.draw_peice() ,(black_pawn2.set_coordinates(black_pawn2_x,black_pawn2_y)))
-    black_pawn3.draw_peice()
-    display.blit(black_pawn3.draw_peice() ,(black_pawn3.set_coordinates(black_pawn3_x,black_pawn3_y)))
-    black_pawn4.draw_peice()
-    display.blit(black_pawn4.draw_peice() ,(black_pawn4.set_coordinates(black_pawn4_x,black_pawn4_y)))
-    black_pawn5.draw_peice()
-    display.blit(black_pawn5.draw_peice() ,(black_pawn5.set_coordinates(black_pawn5_x,black_pawn5_y)))
-    black_pawn6.draw_peice()
-    display.blit(black_pawn6.draw_peice() ,(black_pawn6.set_coordinates(black_pawn6_x,black_pawn6_y)))
-    black_pawn7.draw_peice()
-    display.blit(black_pawn7.draw_peice() ,(black_pawn7.set_coordinates(black_pawn7_x,black_pawn7_y)))
-    black_pawn8.draw_peice()
-    display.blit(black_pawn8.draw_peice() ,(black_pawn8.set_coordinates(black_pawn8_x,black_pawn8_y)))
+    black_pawn1.draw_piece()
+    display.blit(black_pawn1.draw_piece(), (black_pawn1.set_coordinates(black_pawn1_x, black_pawn1_y)))  # first black pawn
+    black_pawn2.draw_piece()
+    display.blit(black_pawn2.draw_piece(), (black_pawn2.set_coordinates(black_pawn2_x, black_pawn2_y)))
+    black_pawn3.draw_piece()
+    display.blit(black_pawn3.draw_piece(), (black_pawn3.set_coordinates(black_pawn3_x, black_pawn3_y)))
+    black_pawn4.draw_piece()
+    display.blit(black_pawn4.draw_piece(), (black_pawn4.set_coordinates(black_pawn4_x, black_pawn4_y)))
+    black_pawn5.draw_piece()
+    display.blit(black_pawn5.draw_piece(), (black_pawn5.set_coordinates(black_pawn5_x, black_pawn5_y)))
+    black_pawn6.draw_piece()
+    display.blit(black_pawn6.draw_piece(), (black_pawn6.set_coordinates(black_pawn6_x, black_pawn6_y)))
+    black_pawn7.draw_piece()
+    display.blit(black_pawn7.draw_piece(), (black_pawn7.set_coordinates(black_pawn7_x, black_pawn7_y)))
+    black_pawn8.draw_piece()
+    display.blit(black_pawn8.draw_piece(), (black_pawn8.set_coordinates(black_pawn8_x, black_pawn8_y)))
 
     #the black horses ///////////////////////
-    black_horse_left.draw_peice()
-    display.blit(black_horse_left.draw_peice() ,(black_horse_left.set_coordinates(black_horse_left_x,black_horse_left_y)))
-    black_horse_right.draw_peice()
-    display.blit(black_horse_right.draw_peice() ,(black_horse_right.set_coordinates(black_horse_right_x,black_horse_right_y)))
+    black_horse_left.draw_piece()
+    display.blit(black_horse_left.draw_piece(), (black_horse_left.set_coordinates(black_horse_left_x, black_horse_left_y)))
+    black_horse_right.draw_piece()
+    display.blit(black_horse_right.draw_piece(), (black_horse_right.set_coordinates(black_horse_right_x, black_horse_right_y)))
 
     # Black Bishops //////////////////////////
-    black_bishop_left.draw_peice()
-    display.blit(black_bishop_left.draw_peice() ,(black_bishop_left.set_coordinates(black_bishop_left_x,black_bishop_left_y)))
-    black_bishop_right.draw_peice()
-    display.blit(black_bishop_right.draw_peice() ,(black_bishop_right.set_coordinates(black_bishop_right_x,black_bishop_right_y)))
+    black_bishop_left.draw_piece()
+    display.blit(black_bishop_left.draw_piece(), (black_bishop_left.set_coordinates(black_bishop_left_x, black_bishop_left_y)))
+    black_bishop_right.draw_piece()
+    display.blit(black_bishop_right.draw_piece(), (black_bishop_right.set_coordinates(black_bishop_right_x, black_bishop_right_y)))
 
     # Black Rooks ///////////////////
-    black_rook_left.draw_peice()
-    display.blit(black_rook_left.draw_peice() ,(black_rook_left.set_coordinates(black_rook_left_x,black_rook_left_y)))
-    black_bishop_right.draw_peice()
-    display.blit(black_rook_right.draw_peice() ,(black_rook_right.set_coordinates(black_rook_right_x,black_rook_right_y)))
+    black_rook_left.draw_piece()
+    display.blit(black_rook_left.draw_piece(), (black_rook_left.set_coordinates(black_rook_left_x, black_rook_left_y)))
+    black_bishop_right.draw_piece()
+    display.blit(black_rook_right.draw_piece(), (black_rook_right.set_coordinates(black_rook_right_x, black_rook_right_y)))
 
     #Black queen ///////////////
-    black_queen.draw_peice()
-    display.blit(black_queen.draw_peice() ,(black_queen.set_coordinates(black_queen_x,black_queen_y)))
+    black_queen.draw_piece()
+    display.blit(black_queen.draw_piece(), (black_queen.set_coordinates(black_queen_x, black_queen_y)))
 
     #Black king ///////////////
-    black_king.draw_peice()
-    display.blit(black_king.draw_peice() ,(black_king.set_coordinates(black_king_x,black_king_y)))
+    black_king.draw_piece()
+    display.blit(black_king.draw_piece(), (black_king.set_coordinates(black_king_x, black_king_y)))
 
 
     # the white pawns ///////////
-    white_pawn1.draw_peice()
-    display.blit(white_pawn1.draw_peice() ,(white_pawn1.set_coordinates(white_pawn1_x,white_pawn1_y)))  # first white pawn
-    white_pawn2.draw_peice()
-    display.blit(white_pawn2.draw_peice() ,(white_pawn2.set_coordinates(white_pawn2_x,white_pawn2_y)))
-    white_pawn3.draw_peice()
-    display.blit(white_pawn3.draw_peice() ,(white_pawn3.set_coordinates(white_pawn3_x,white_pawn3_y)))
-    white_pawn4.draw_peice()
-    display.blit(white_pawn4.draw_peice() ,(white_pawn4.set_coordinates(white_pawn4_x,white_pawn4_y)))
-    white_pawn5.draw_peice()
-    display.blit(white_pawn5.draw_peice() ,(white_pawn5.set_coordinates(white_pawn5_x,white_pawn5_y)))
-    white_pawn6.draw_peice()
-    display.blit(white_pawn6.draw_peice() ,(white_pawn6.set_coordinates(white_pawn6_x,white_pawn6_y)))
-    white_pawn7.draw_peice()
-    display.blit(white_pawn7.draw_peice() ,(white_pawn7.set_coordinates(white_pawn7_x,white_pawn7_y)))
-    white_pawn8.draw_peice()
-    display.blit(white_pawn8.draw_peice() ,(white_pawn8.set_coordinates(white_pawn8_x,white_pawn8_y)))
+    white_pawn1.draw_piece()
+    display.blit(white_pawn1.draw_piece(), (white_pawn1.set_coordinates(white_pawn1_x, white_pawn1_y)))  # first white pawn
+    white_pawn2.draw_piece()
+    display.blit(white_pawn2.draw_piece(), (white_pawn2.set_coordinates(white_pawn2_x, white_pawn2_y)))
+    white_pawn3.draw_piece()
+    display.blit(white_pawn3.draw_piece(), (white_pawn3.set_coordinates(white_pawn3_x, white_pawn3_y)))
+    white_pawn4.draw_piece()
+    display.blit(white_pawn4.draw_piece(), (white_pawn4.set_coordinates(white_pawn4_x, white_pawn4_y)))
+    white_pawn5.draw_piece()
+    display.blit(white_pawn5.draw_piece(), (white_pawn5.set_coordinates(white_pawn5_x, white_pawn5_y)))
+    white_pawn6.draw_piece()
+    display.blit(white_pawn6.draw_piece(), (white_pawn6.set_coordinates(white_pawn6_x, white_pawn6_y)))
+    white_pawn7.draw_piece()
+    display.blit(white_pawn7.draw_piece(), (white_pawn7.set_coordinates(white_pawn7_x, white_pawn7_y)))
+    white_pawn8.draw_piece()
+    display.blit(white_pawn8.draw_piece(), (white_pawn8.set_coordinates(white_pawn8_x, white_pawn8_y)))
 
     #the white horses ///////////////////////
-    white_horse_left.draw_peice()
-    display.blit(white_horse_left.draw_peice() ,(white_horse_left.set_coordinates(white_horse_left_x,white_horse_left_y)))
-    black_horse_right.draw_peice()
-    display.blit(white_horse_right.draw_peice() ,(white_horse_right.set_coordinates(white_horse_right_x,white_horse_right_y)))
+    white_horse_left.draw_piece()
+    display.blit(white_horse_left.draw_piece(), (white_horse_left.set_coordinates(white_horse_left_x, white_horse_left_y)))
+    black_horse_right.draw_piece()
+    display.blit(white_horse_right.draw_piece(), (white_horse_right.set_coordinates(white_horse_right_x, white_horse_right_y)))
 
     # the white bishops///////////////////////
-    white_bishop_left.draw_peice()
-    display.blit(white_bishop_left.draw_peice() ,(white_bishop_left.set_coordinates(white_bishop_left_x,white_bishop_left_y)))
-    black_bishop_right.draw_peice()
-    display.blit(white_bishop_right.draw_peice() ,(white_bishop_right.set_coordinates(white_bishop_right_x,white_bishop_right_y)))
+    white_bishop_left.draw_piece()
+    display.blit(white_bishop_left.draw_piece(), (white_bishop_left.set_coordinates(white_bishop_left_x, white_bishop_left_y)))
+    black_bishop_right.draw_piece()
+    display.blit(white_bishop_right.draw_piece(), (white_bishop_right.set_coordinates(white_bishop_right_x, white_bishop_right_y)))
 
     # the white rooks///////////////////////
-    white_rook_left.draw_peice()
-    display.blit(white_rook_left.draw_peice() ,(white_rook_left.set_coordinates(white_rook_left_x,white_rook_left_y)))
-    black_rook_right.draw_peice()
-    display.blit(white_rook_right.draw_peice() ,(white_rook_right.set_coordinates(white_rook_right_x,white_rook_right_y)))
+    white_rook_left.draw_piece()
+    display.blit(white_rook_left.draw_piece(), (white_rook_left.set_coordinates(white_rook_left_x, white_rook_left_y)))
+    black_rook_right.draw_piece()
+    display.blit(white_rook_right.draw_piece(), (white_rook_right.set_coordinates(white_rook_right_x, white_rook_right_y)))
 
     #White queen ///////////////
-    white_queen.draw_peice()
-    display.blit(white_queen.draw_peice() ,(white_queen.set_coordinates(white_queen_x,white_queen_y)))
+    white_queen.draw_piece()
+    display.blit(white_queen.draw_piece(), (white_queen.set_coordinates(white_queen_x, white_queen_y)))
 
     #White king ///////////////
-    white_king.draw_peice()
-    display.blit(white_king.draw_peice() ,(white_king.set_coordinates(white_king_x,white_king_y)))
+    white_king.draw_piece()
+    display.blit(white_king.draw_piece(), (white_king.set_coordinates(white_king_x, white_king_y)))
 
 
 
@@ -327,90 +327,90 @@ def identify_peice(x,y):  # identify which piece the user has chosen and show th
     id_got=check_object_selected(x,y)
     if id_got =="bp1":
         pawn = Pawn("none","bp1")
-        display.blit(pawn.draw_peice() ,(pawn.set_coordinates(black_pawn1_x+18 ,black_pawn1_y-60)))
+        display.blit(pawn.draw_piece(), (pawn.set_coordinates(black_pawn1_x + 18, black_pawn1_y - 60)))
         return x,y
     elif id_got =="bp2":
         pawn = Pawn("none","bp2")
-        display.blit(pawn.draw_peice() ,(pawn.set_coordinates(black_pawn2_x+18 ,black_pawn2_y-60)))
+        display.blit(pawn.draw_piece(), (pawn.set_coordinates(black_pawn2_x + 18, black_pawn2_y - 60)))
         return x,y
     elif id_got =="bp3":
         pawn = Pawn("none","bp3")
-        display.blit(pawn.draw_peice() ,(pawn.set_coordinates(black_pawn3_x+18 ,black_pawn3_y-60)))
+        display.blit(pawn.draw_piece(), (pawn.set_coordinates(black_pawn3_x + 18, black_pawn3_y - 60)))
         return x,y
     elif id_got =="bp4":
         pawn = Pawn("none","bp4")
-        display.blit(pawn.draw_peice() ,(pawn.set_coordinates(black_pawn4_x+18 ,black_pawn4_y-60)))
+        display.blit(pawn.draw_piece(), (pawn.set_coordinates(black_pawn4_x + 18, black_pawn4_y - 60)))
         return x,y
     elif id_got =="bp5":
         pawn = Pawn("none","bp5")
-        display.blit(pawn.draw_peice() ,(pawn.set_coordinates(black_pawn5_x+18 ,black_pawn5_y-60)))
+        display.blit(pawn.draw_piece(), (pawn.set_coordinates(black_pawn5_x + 18, black_pawn5_y - 60)))
         return x,y
     elif id_got =="bp6":
         pawn = Pawn("none","bp6")
-        display.blit(pawn.draw_peice() ,(pawn.set_coordinates(black_pawn6_x+18 ,black_pawn6_y-60)))
+        display.blit(pawn.draw_piece(), (pawn.set_coordinates(black_pawn6_x + 18, black_pawn6_y - 60)))
         return x,y
     elif id_got =="bp7":
         pawn = Pawn("none","bp7")
-        display.blit(pawn.draw_peice() ,(pawn.set_coordinates(black_pawn7_x+18 ,black_pawn7_y-60)))
+        display.blit(pawn.draw_piece(), (pawn.set_coordinates(black_pawn7_x + 18, black_pawn7_y - 60)))
         return x,y
     elif id_got =="bp8":
         pawn = Pawn("none","bp8")
-        display.blit(pawn.draw_peice() ,(pawn.set_coordinates(black_pawn8_x+18 ,black_pawn8_y-60)))
+        display.blit(pawn.draw_piece(), (pawn.set_coordinates(black_pawn8_x + 18, black_pawn8_y - 60)))
         return x,y
     elif id_got =="wp1":
         pawn = Pawn("none","wp1")
-        display.blit(pawn.draw_peice() ,(pawn.set_coordinates(white_pawn1_x+18 ,white_pawn1_y+90)))
+        display.blit(pawn.draw_piece(), (pawn.set_coordinates(white_pawn1_x + 18, white_pawn1_y + 90)))
         return x,y
     elif id_got =="wp2":
         pawn = Pawn("none","wp2")
-        display.blit(pawn.draw_peice() ,(pawn.set_coordinates(white_pawn2_x+18 ,white_pawn2_y+90)))
+        display.blit(pawn.draw_piece(), (pawn.set_coordinates(white_pawn2_x + 18, white_pawn2_y + 90)))
         return x,y
     elif id_got =="wp3":
         pawn = Pawn("none","wp3")
-        display.blit(pawn.draw_peice() ,(pawn.set_coordinates(white_pawn3_x+18 ,white_pawn3_y+90)))
+        display.blit(pawn.draw_piece(), (pawn.set_coordinates(white_pawn3_x + 18, white_pawn3_y + 90)))
         return x,y
     elif id_got =="wp3":
         pawn = Pawn("none","wp3")
-        display.blit(pawn.draw_peice() ,(pawn.set_coordinates(white_pawn3_x+18 ,white_pawn3_y+90)))
+        display.blit(pawn.draw_piece(), (pawn.set_coordinates(white_pawn3_x + 18, white_pawn3_y + 90)))
         return x,y
     elif id_got =="wp4":
         pawn = Pawn("none","wp4")
-        display.blit(pawn.draw_peice() ,(pawn.set_coordinates(white_pawn4_x+18 ,white_pawn4_y+90)))
+        display.blit(pawn.draw_piece(), (pawn.set_coordinates(white_pawn4_x + 18, white_pawn4_y + 90)))
         return x,y
     elif id_got =="wp5":
         pawn = Pawn("none","wp5")
-        display.blit(pawn.draw_peice() ,(pawn.set_coordinates(white_pawn5_x+18 ,white_pawn5_y+90)))
+        display.blit(pawn.draw_piece(), (pawn.set_coordinates(white_pawn5_x + 18, white_pawn5_y + 90)))
         return x,y
     elif id_got =="wp6":
         pawn = Pawn("none","wp6")
-        display.blit(pawn.draw_peice() ,(pawn.set_coordinates(white_pawn6_x+18 ,white_pawn6_y+90)))
+        display.blit(pawn.draw_piece(), (pawn.set_coordinates(white_pawn6_x + 18, white_pawn6_y + 90)))
         return x,y
     elif id_got =="wp7":
         pawn = Pawn("none","wp7")
-        display.blit(pawn.draw_peice() ,(pawn.set_coordinates(white_pawn7_x+18 ,white_pawn7_y+90)))
+        display.blit(pawn.draw_piece(), (pawn.set_coordinates(white_pawn7_x + 18, white_pawn7_y + 90)))
         return x,y
     elif id_got =="wp8":
         pawn = Pawn("none","wp8")
-        display.blit(pawn.draw_peice() ,(pawn.set_coordinates(white_pawn8_x+18 ,white_pawn8_y+90)))
+        display.blit(pawn.draw_piece(), (pawn.set_coordinates(white_pawn8_x + 18, white_pawn8_y + 90)))
         return x,y
 
     #Horses
     elif id_got =="bhl":
         horse = Horse("none","bhl")
-        display.blit(horse.draw_peice() ,(horse.set_coordinates( black_horse_left_x+105,black_horse_left_y - 130)))
-        display.blit(horse.draw_peice() ,(horse.set_coordinates( black_horse_left_x-70,black_horse_left_y - 130)))
+        display.blit(horse.draw_piece(), (horse.set_coordinates(black_horse_left_x + 105, black_horse_left_y - 130)))
+        display.blit(horse.draw_piece(), (horse.set_coordinates(black_horse_left_x - 70, black_horse_left_y - 130)))
     elif id_got =="bhr":
         horse = Horse("none","bhr")
-        display.blit(horse.draw_peice() ,(horse.set_coordinates( black_horse_right_x+105,black_horse_right_y - 130)))
-        display.blit(horse.draw_peice() ,(horse.set_coordinates( black_horse_right_x-70,black_horse_right_y - 130)))
+        display.blit(horse.draw_piece(), (horse.set_coordinates(black_horse_right_x + 105, black_horse_right_y - 130)))
+        display.blit(horse.draw_piece(), (horse.set_coordinates(black_horse_right_x - 70, black_horse_right_y - 130)))
     elif id_got =="whl":
         horse = Horse("none","whl")
-        display.blit(horse.draw_peice() ,(horse.set_coordinates( white_horse_left_x+105,white_horse_left_y + 160)))
-        display.blit(horse.draw_peice() ,(horse.set_coordinates( white_horse_left_x-73,white_horse_left_y + 160)))
+        display.blit(horse.draw_piece(), (horse.set_coordinates(white_horse_left_x + 105, white_horse_left_y + 160)))
+        display.blit(horse.draw_piece(), (horse.set_coordinates(white_horse_left_x - 73, white_horse_left_y + 160)))
     elif id_got =="whr":
         horse = Horse("none","whr")
-        display.blit(horse.draw_peice() ,(horse.set_coordinates( white_horse_right_x+105,white_horse_right_y + 160)))
-        display.blit(horse.draw_peice() ,(horse.set_coordinates( white_horse_right_x-73,white_horse_right_y + 160)))
+        display.blit(horse.draw_piece(), (horse.set_coordinates(white_horse_right_x + 105, white_horse_right_y + 160)))
+        display.blit(horse.draw_piece(), (horse.set_coordinates(white_horse_right_x - 73, white_horse_right_y + 160)))
 
 
 def move_peice(x,y,id):
