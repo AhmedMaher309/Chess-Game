@@ -17,5 +17,5 @@ class BlackPawn(Pawn):
         pawn.draw_piece()
 
     def move(self, click_x, click_y):
-        if click_y == self.y or (click_y + 5 >= self.y >= click_y - 70):
+        if click_y == self.y or (self.y + 5 >= click_y >= self.y - 70):
             self.y = self.y - 73
