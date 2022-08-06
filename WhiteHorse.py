@@ -12,6 +12,7 @@ class WhiteHorse(Horse):
         horse.draw_piece()
         horse.set_coordinates(self.x - 73, self.y + 160)
         horse.draw_piece()
+        del horse
 
     def move(self, click_x, click_y):
         # TODO - to be implemented

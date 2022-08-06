@@ -12,6 +12,7 @@ class BlackHorse(Horse):
         horse.draw_piece()
         horse.set_coordinates(self.x - 70, self.y - 130)
         horse.draw_piece()
+        del horse
 
     def move(self, click_x, click_y):
         if click_y == self.y or (self.y - 90 >= click_y >= self.y - 130):
