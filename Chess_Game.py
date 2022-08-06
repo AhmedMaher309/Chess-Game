@@ -4,14 +4,14 @@ import pygame
 from pygame.locals import *
 import sys
 from pygame.sprite import Sprite
-from Bishop import Bishop
-from BlackHorse import BlackHorse
-from Rook import Rook
-from Queen import Queen
-from King import King
-from WhiteHorse import WhiteHorse
-from WhitePawn import WhitePawn
-from BlackPawn import BlackPawn
+from pieces.Bishop import Bishop
+from pieces.Rook import Rook
+from pieces.Queen import Queen
+from pieces.King import King
+from pieces.whitePieces.WhiteHorse import WhiteHorse
+from pieces.whitePieces.WhitePawn import WhitePawn
+from pieces.blackPieces.BlackHorse import BlackHorse
+from pieces.blackPieces.BlackPawn import BlackPawn
 from util import display
 
 pygame.init()

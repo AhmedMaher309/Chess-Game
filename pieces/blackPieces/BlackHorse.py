@@ -1,6 +1,6 @@
 from util import display
 
-from Horse import Horse
+from pieces.Horse import Horse
 
 class BlackHorse(Horse):
 

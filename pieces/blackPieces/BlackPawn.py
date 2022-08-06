@@ -1,6 +1,6 @@
 from util import display
 
-from Pawn import Pawn
+from pieces.Pawn import Pawn
 
 
 class BlackPawn(Pawn):
