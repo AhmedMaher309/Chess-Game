@@ -1,12 +1,12 @@
 import pygame
 from util import display
 
-from Pieces import Piece
+from Piece import Piece
 
 
 class Pawn(Piece):
-    def __init__(self, colour, pawn_id):
-        super().__init__(colour, pawn_id)
+    def __init__(self, colour, pawn_id, x = 0, y = 0):
+        super().__init__(colour, pawn_id, x, y)
 
     def draw_piece(self):
         l = 120
@@ -20,6 +20,7 @@ class Pawn(Piece):
             l = 80
             w = 70
         piece_pic = pygame.transform.scale(piece_pic, (l, w))
+        display.blit(piece_pic, (self.x, self.y))
         return piece_pic
 
     def update_position(self, x, y):

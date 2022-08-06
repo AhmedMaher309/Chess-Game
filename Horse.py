@@ -1,15 +1,12 @@
 import pygame
-from pygame.locals import *
-import sys
+from util import display
 
-pygame.init()
-
-from Pieces import Piece
+from Piece import Piece
 
 
 class Horse(Piece):
-    def __init__(self, colour, horse_id):
-        super().__init__(colour, horse_id)
+    def __init__(self, colour, horse_id, x = 0, y = 0):
+        super().__init__(colour, horse_id, x, y)
 
     def draw_piece(self):
         l = 110
@@ -23,6 +20,7 @@ class Horse(Piece):
             l = 80
             w = 70
         piece_pic = pygame.transform.scale(piece_pic, (l, w))
+        display.blit(piece_pic, (self.x, self.y))
         return piece_pic
 
     def is_selected(self, click_x, click_y):
