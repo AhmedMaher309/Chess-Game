@@ -1,6 +1,7 @@
 from util import display
-
+from pieces.Squares import Square
 from pieces.Horse import Horse
+ 
 
 class BlackHorse(Horse):
 
@@ -11,6 +12,14 @@ class BlackHorse(Horse):
         horse = Horse("none", self.piece_id, self.x + 105, self.y - 130)
         horse.draw_piece()
         horse.set_coordinates(self.x - 70, self.y - 130)
+        horse.draw_piece()
+        horse.set_coordinates(self.x - 160, self.y - 58)
+        horse.draw_piece()
+        horse.set_coordinates(self.x + 193, self.y - 58)
+        horse.draw_piece()
+        horse.set_coordinates(self.x - 160, self.y + 85)
+        horse.draw_piece()
+        horse.set_coordinates(self.x + 193, self.y + 85)
         horse.draw_piece()
         del horse
 
