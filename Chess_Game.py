@@ -12,6 +12,7 @@ from pieces.whitePieces.WhiteHorse import WhiteHorse
 from pieces.whitePieces.WhitePawn import WhitePawn
 from pieces.blackPieces.BlackHorse import BlackHorse
 from pieces.blackPieces.BlackPawn import BlackPawn
+from pieces.Squares import Square
 from util import display
 
 pygame.init()
@@ -77,31 +78,107 @@ white_queen_y = 20
 white_king_x = 390
 white_king_y = 20
 
+
+# pieces and squares decelaration///////////
+
+squares = []
+sq_x = 45
+sq_y = 545
+sq_width = 85
+sq_height = 70
 pieces = []
 
+BRL = Rook("black", "brl", black_rook_left_x, black_rook_left_y)
+pieces.append(BRL)
+squares.append(Square(sq_x,sq_y,sq_width,sq_height,BRL))
+sq_x +=90
+BHL = BlackHorse("black", "bhl", black_horse_left_x, black_horse_left_y)
+pieces.append(BHL)
+squares.append(Square(sq_x,sq_y,sq_width,sq_height,BHL))
+sq_x +=90
+BBL = Bishop("black", "bbl", black_bishop_left_x, black_bishop_left_y)
+pieces.append(BBL)
+squares.append(Square(sq_x,sq_y,sq_width,sq_height,BBL))
+sq_x +=90
+BQ = Queen("black", "bq", black_queen_x, black_queen_y)
+pieces.append(BQ)
+squares.append(Square(sq_x,sq_y,sq_width,sq_height,BQ))
+sq_x +=90
+BK = King("black", "bk", black_king_x, black_king_y)
+pieces.append(BK)
+squares.append(Square(sq_x,sq_y,sq_width,sq_height,BK))
+sq_x +=90
+BBR = Bishop("black", "bbr", black_bishop_right_x, black_bishop_right_y)
+pieces.append(BBR)
+squares.append(Square(sq_x,sq_y,sq_width,sq_height,BBR))
+sq_x +=90
+BHR = BlackHorse("black", "bhr", black_horse_right_x, black_horse_right_y)
+pieces.append(BHR)
+squares.append(Square(sq_x,sq_y,sq_width,sq_height,BHR))
+sq_x +=90
+BRR = Rook("black", "brr", black_rook_right_x, black_rook_right_y)
+pieces.append(BRR)
+squares.append(Square(sq_x,sq_y,sq_width,sq_height,BRR))
+sq_x +=90
+
+sq_x = 45
+sq_y = 472
 for x in range(1, 9):
-    pieces.append(BlackPawn("black", "bp" + str(x), 30 + 90 * (x - 1), 460))
+    BP = BlackPawn("black", "bp" + str(x), 30 + 90 * (x - 1), 460)
+    squares.append(Square(sq_x,sq_y,sq_width,sq_height,BP))
+    sq_x +=90
+    pieces.append(BP)
 
-pieces.append(BlackHorse("black", "bhl", black_horse_left_x, black_horse_left_y))
-pieces.append(BlackHorse("black", "bhr", black_horse_right_x, black_horse_right_y))
-pieces.append(Bishop("black", "bbl", black_bishop_left_x, black_bishop_left_y))
-pieces.append(Bishop("black", "bbr", black_bishop_right_x, black_bishop_right_y))
-pieces.append(Rook("black", "brl", black_rook_left_x, black_rook_left_y))
-pieces.append(Rook("black", "brr", black_rook_right_x, black_rook_right_y))
-pieces.append(Queen("black", "bq", black_queen_x, black_queen_y))
-pieces.append(King("black", "bk", black_king_x, black_king_y))
+sq_x = 45
+sq_y = 400
+for i in range (32):
+    if i == 8 or i == 16 or i == 24:
+        sq_y = sq_y-73
+        sq_x = 45
+    squares.append(Square(sq_x,sq_y,sq_width,sq_height,None))
+    sq_x += 90
 
+sq_x = 45
+sq_y = 108
 for x in range(1, 9):
-    pieces.append(WhitePawn("white", "wp" + str(x), 30 + 90 * (x - 1), 90))
+    WP = WhitePawn("white", "wp" + str(x), 30 + 90 * (x - 1), 90)
+    pieces.append(WP)
+    squares.append(Square(sq_x,sq_y,sq_width,sq_height,WP))
+    sq_x +=90
+    pieces.append(WP)
 
-pieces.append(WhiteHorse("white", "whl", white_horse_left_x, white_horse_left_y))
-pieces.append(WhiteHorse("white", "whr", white_horse_right_x, white_horse_right_y))
-pieces.append(Bishop("white", "wbl", white_bishop_left_x, white_bishop_left_y))
-pieces.append(Bishop("white", "wbr", white_bishop_right_x, white_bishop_right_y))
-pieces.append(Rook("white", "wrl", white_rook_left_x, white_rook_left_y))
-pieces.append(Rook("white", "wrr", white_rook_right_x, white_rook_right_y))
-pieces.append(Queen("white", "wq", white_queen_x, white_queen_y))
-pieces.append(King("white", "wk", white_king_x, white_king_y))
+sq_x = 45
+sq_y = 35
+WRL = Rook("white", "wrl", white_rook_left_x, white_rook_left_y)
+pieces.append(WRL)
+squares.append(Square(sq_x,sq_y,sq_width,sq_height,WRL))
+sq_x +=90
+WHL = WhiteHorse("white", "whl", white_horse_left_x, white_horse_left_y)
+pieces.append(WHL)
+squares.append(Square(sq_x,sq_y,sq_width,sq_height,WHL))
+sq_x +=90
+WBL = Bishop("white", "wbl", white_bishop_left_x, white_bishop_left_y)
+pieces.append(WBL)
+squares.append(Square(sq_x,sq_y,sq_width,sq_height,WBL))
+sq_x +=90
+WQ = Queen("white", "wq", white_queen_x, white_queen_y)
+pieces.append(WQ)
+WK = King("white", "wk", white_king_x, white_king_y)
+pieces.append(WK)
+squares.append(Square(sq_x,sq_y,sq_width,sq_height,WK))
+sq_x +=90
+WBR = Bishop("white", "wbr", white_bishop_right_x, white_bishop_right_y)
+pieces.append(WBR)
+squares.append(Square(sq_x,sq_y,sq_width,sq_height,WBR))
+sq_x +=90
+WHR = WhiteHorse("white", "whr", white_horse_right_x, white_horse_right_y)
+pieces.append(WHR)
+squares.append(Square(sq_x,sq_y,sq_width,sq_height,WHR))
+sq_x +=90
+WRR = Rook("white", "wrr", white_rook_right_x, white_rook_right_y)
+pieces.append(WRR)
+squares.append(Square(sq_x,sq_y,sq_width,sq_height,WRR))
+sq_x +=90
 
 
 def draw_pieces():
@@ -112,7 +189,6 @@ def draw_pieces():
     # the black pawns /////////////
     for piece in pieces:
         piece.draw_piece()
-
 
 def check_selected_object(click_x, click_y):
     """
@@ -127,7 +203,6 @@ def check_selected_object(click_x, click_y):
 
     return None
 
-
 def draw_possible_moves(x, y):
     """
     Show the possible moves of selected piece
@@ -139,7 +214,6 @@ def draw_possible_moves(x, y):
     if selectedPiece is not None:
         selectedPiece.draw_possible_moves()
 
-
 def move_piece(x, y, piece):
     """
     Changes the position of a piece to a new valid place
@@ -150,13 +224,10 @@ def move_piece(x, y, piece):
     """
     if piece is not None:
         piece.move(x, y)
-
-
-# we need a function that searches for objects near each piece movement
-# that when i select a piece and call this function it should search in all possible squares of movement if there is any piece
-
 while True:  # Game main loop
     display.blit(background_image, (1, 0))
+    squares[62].render(display,255,255,255)
+    #print(squares[3].piece_id)
     draw_pieces()
     for event in pygame.event.get():
         if event.type == MOUSEBUTTONDOWN:  # check if the mouse was pressed
@@ -173,6 +244,5 @@ while True:  # Game main loop
         if event.type == QUIT:
             pygame.quit()
             sys.exit()
-
     pygame.display.update()
     FPS_CLOCK.tick(30)
