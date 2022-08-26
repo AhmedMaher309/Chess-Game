@@ -1,24 +1,89 @@
 from util import display
-
+from pieces.Squares import Square
 from pieces.Horse import Horse
+ 
 
 class BlackHorse(Horse):
 
     def __init__(self, colour, piece_id, x, y):
+        self.possibles =[]
         super(BlackHorse, self).__init__(colour, piece_id, x, y)
 
-    def draw_possible_moves(self):
-        horse = Horse("none", self.piece_id, self.x + 105, self.y - 130)
-        horse.draw_piece()
-        horse.set_coordinates(self.x - 70, self.y - 130)
-        horse.draw_piece()
-        del horse
 
-    def move(self, click_x, click_y):
-        if click_y == self.y or (self.y - 90 >= click_y >= self.y - 130):
-            if click_x == self.x or (self.x + 180 >= click_x >= self.x + 90):
-                self.y = self.y - 145
-                self.x = self.x + 90
-            elif click_x <= self.x + 10:
-                self.y = self.y - 145
-                self.x = self.x - 90
+    def draw_possible_moves(self,squares,selc_x,selc_y):
+        for square in squares:
+            x , y = square.get_coordinates()
+            if selc_x+85 < x < selc_x + 170 and selc_y - 210 < y < selc_y - 140  :
+                if square.get_piece() == None or square.get_piece().piece_id[0]=='w':
+                    horse = Horse("none", self.piece_id, x , y )
+                    horse.draw_piece()
+                    del horse
+                    self.possibles.append(square)
+
+            if selc_x - 170 <= x <= selc_x - 85  and selc_y-210 <= y <= selc_y - 140:
+                if square.get_piece() == None or square.get_piece().piece_id[0]=='w':
+                    horse = Horse("none", self.piece_id, x , y )
+                    horse.draw_piece()
+                    del horse
+                    self.possibles.append(square)
+
+            if selc_x - 255 <= x <= selc_x - 170 and  selc_y - 140 <= y <= selc_y - 70:
+                if square.get_piece() == None or square.get_piece().piece_id[0]=='w':
+                    horse = Horse("none", self.piece_id, x , y )
+                    horse.draw_piece()
+                    del horse
+                    self.possibles.append(square)
+
+            if selc_x + 170 <= x <= selc_x + 255 and selc_y-140 <= y <= selc_y-70:
+               if square.get_piece() == None or square.get_piece().piece_id[0]=='w':
+                    horse = Horse("none", self.piece_id, x , y )
+                    horse.draw_piece()
+                    del horse
+                    self.possibles.append(square)
+
+            if selc_x + 85 <= x <= selc_x + 170 and selc_y + 140 <= y <= selc_y + 210:
+               if square.get_piece() == None or square.get_piece().piece_id[0]=='w':
+                    horse = Horse("none", self.piece_id, x , y )
+                    horse.draw_piece()
+                    del horse
+                    self.possibles.append(square)
+
+            if selc_x - 170 <= x <= selc_x -85 and selc_y + 140 <= y <= selc_y + 210:
+               if square.get_piece() == None or square.get_piece().piece_id[0]=='w':
+                    horse = Horse("none", self.piece_id, x , y )
+                    horse.draw_piece()
+                    del horse
+                    self.possibles.append(square)
+
+            if selc_x - 255 <= x <= selc_x - 170 and selc_y + 70 <= y <= selc_y + 140:
+               if square.get_piece() == None or square.get_piece().piece_id[0]=='w':
+                    horse = Horse("none", self.piece_id, x , y )
+                    horse.draw_piece()
+                    del horse
+                    self.possibles.append(square)
+
+            if selc_x + 170 <= x <= selc_x + 255 and selc_y + 70 <= y <= selc_y + 140:
+               if square.get_piece() == None or square.get_piece().piece_id[0]=='w':
+                    horse = Horse("none", self.piece_id, x , y )
+                    horse.draw_piece()
+                    del horse
+                    self.possibles.append(square)
+
+    def set_None(self,squares):
+        for square in squares:
+            if square.get_piece() == self:
+               square.set_piece(None)
+
+
+    def move(self, click_x, click_y,squares): # move the piece to the square 
+        moves_available = self.possibles
+        for move in moves_available:
+            x,y = move.get_coordinates()
+            if x<= click_x <= x+85 and y <= click_y <= y+70:
+                self.x = move.x-10
+                self.y = move.y-15
+                self.set_None(squares)
+                move.set_piece(self)  
+                
+                #print (square.piece.piece_id)
+
