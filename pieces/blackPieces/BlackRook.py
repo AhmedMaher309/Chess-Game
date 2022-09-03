@@ -10,6 +10,7 @@ class BlackRook(Rook):
     
     def draw_possible_moves(self,squares,selc_x,selc_y):
         sy = selc_y
+        sx = selc_x
         for square in squares:
             x , y = square.get_coordinates()
             if sx == x and sy -140 < y < sy - 70:
