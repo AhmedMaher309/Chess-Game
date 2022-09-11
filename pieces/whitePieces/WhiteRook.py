@@ -1,30 +1,47 @@
 from util import display
 from pieces.Squares import Square
-from pieces.Bishop import Bishop
+from pieces.Rook import Rook
 
 
-class WhiteBishop(Bishop):
+class WhiteRook(Rook):
     def __init__(self, colour, piece_id, x, y):
         self.possibles = []
-        super(WhiteBishop, self).__init__(colour, piece_id, x, y)
+        super(WhiteRook, self).__init__(colour, piece_id, x, y)
 
     def draw_possible_moves(self, squares, selc_x, selc_y):
-        sx = selc_x
         sy = selc_y
+        sx = selc_x
         for square in squares:
             x, y = square.get_coordinates()
-            if sx + 85 < x < sx + 170 and sy - 140 < y < sy - 70:
+            if sx == x and sy - 140 < y < sy - 70:
                 if square.get_piece() is None:
-                    bishop = Bishop("none", self.piece_id, x, y)
-                    bishop.draw_piece()
-                    del bishop
+                    rook = Rook("none", self.piece_id, x, y)
+                    rook.draw_piece()
+                    del rook
                     self.possibles.append(square)
-                    sx = x
                     sy = y
                 elif square.get_piece() is not None and square.get_piece().piece_id[0] == 'b':
-                    bishop = Bishop("none", self.piece_id, x, y)
-                    bishop.draw_piece()
-                    del bishop
+                    rook = Rook("none", self.piece_id, x, y)
+                    rook.draw_piece()
+                    del rook
+                    self.possibles.append(square)
+                    break
+                elif square.get_piece() is not None and square.get_piece().piece_id[0] == 'w':
+                    break
+        sy = selc_y
+        for square in reversed(squares):
+            x, y = square.get_coordinates()
+            if sx == x and sy + 70 < y < sy + 140:
+                if square.get_piece() is None:
+                    rook = Rook("none", self.piece_id, x, y)
+                    rook.draw_piece()
+                    del rook
+                    self.possibles.append(square)
+                    sy = y
+                elif square.get_piece() is not None and square.get_piece().piece_id[0] == 'b':
+                    rook = Rook("none", self.piece_id, x, y)
+                    rook.draw_piece()
+                    del rook
                     self.possibles.append(square)
                     break
                 elif square.get_piece() is not None and square.get_piece().piece_id[0] == 'w':
@@ -33,18 +50,17 @@ class WhiteBishop(Bishop):
         sy = selc_y
         for square in squares:
             x, y = square.get_coordinates()
-            if sx - 170 < x < sx - 85 and sy - 140 < y < sy - 70:
+            if sy == y and sx + 85 < x < sx + 170:
                 if square.get_piece() is None:
-                    bishop = Bishop("none", self.piece_id, x, y)
-                    bishop.draw_piece()
-                    del bishop
+                    rook = Rook("none", self.piece_id, x, y)
+                    rook.draw_piece()
+                    del rook
                     self.possibles.append(square)
                     sx = x
-                    sy = y
                 elif square.get_piece() is not None and square.get_piece().piece_id[0] == 'b':
-                    bishop = Bishop("none", self.piece_id, x, y)
-                    bishop.draw_piece()
-                    del bishop
+                    rook = Rook("none", self.piece_id, x, y)
+                    rook.draw_piece()
+                    del rook
                     self.possibles.append(square)
                     break
                 elif square.get_piece() is not None and square.get_piece().piece_id[0] == 'w':
@@ -53,38 +69,17 @@ class WhiteBishop(Bishop):
         sy = selc_y
         for square in reversed(squares):
             x, y = square.get_coordinates()
-            if sx + 85 < x < sx + 170 and sy + 70 < y < sy + 140:
+            if sy == y and sx - 170 < x < sx - 85:
                 if square.get_piece() is None:
-                    bishop = Bishop("none", self.piece_id, x, y)
-                    bishop.draw_piece()
-                    del bishop
+                    rook = Rook("none", self.piece_id, x, y)
+                    rook.draw_piece()
+                    del rook
                     self.possibles.append(square)
                     sx = x
-                    sy = y
                 elif square.get_piece() is not None and square.get_piece().piece_id[0] == 'b':
-                    bishop = Bishop("none", self.piece_id, x, y)
-                    bishop.draw_piece()
-                    del bishop
-                    self.possibles.append(square)
-                    break
-                elif square.get_piece() is not None and square.get_piece().piece_id[0] == 'w':
-                    break
-        sx = selc_x
-        sy = selc_y
-        for square in reversed(squares):
-            x, y = square.get_coordinates()
-            if sx - 170 < x < sx - 85 and sy + 70 < y < sy + 140:
-                if square.get_piece() is None:
-                    bishop = Bishop("none", self.piece_id, x, y)
-                    bishop.draw_piece()
-                    del bishop
-                    self.possibles.append(square)
-                    sx = x
-                    sy = y
-                elif square.get_piece() is not None and square.get_piece().piece_id[0] == 'b':
-                    bishop = Bishop("none", self.piece_id, x, y)
-                    bishop.draw_piece()
-                    del bishop
+                    rook = Rook("none", self.piece_id, x, y)
+                    rook.draw_piece()
+                    del rook
                     self.possibles.append(square)
                     break
                 elif square.get_piece() is not None and square.get_piece().piece_id[0] == 'w':
