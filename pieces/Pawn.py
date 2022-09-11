@@ -27,6 +27,7 @@ class Pawn(Piece):
         self.x = x
         self.y = y
 
+    
 
 
     # def valid_moves(self):
