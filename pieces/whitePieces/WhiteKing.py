@@ -8,7 +8,8 @@ class WhiteKing(King):
         self.possibles = []
         super(WhiteKing, self).__init__(colour, piece_id, x, y)
 
-    def draw_possible_moves(self, squares, selc_x, selc_y):
+    def set_possible_moves(self, squares, selc_x, selc_y):
+        self.possibles.clear()
         sx = selc_x
         sy = selc_y
         for square in squares:
@@ -22,14 +23,8 @@ class WhiteKing(King):
                     (sy == y and sx - 170 < x < sx - 85) or \
                     (sy == y and sx + 85 < x < sx + 170):
                 if square.get_piece() is None:
-                    king = King("none", self.piece_id, x, y)
-                    king.draw_piece()
-                    del king
                     self.possibles.append(square)
                 elif square.get_piece() is not None and square.get_piece().piece_id[0] == 'b':
-                    king = King("none", self.piece_id, x, y)
-                    king.draw_piece()
-                    del king
                     self.possibles.append(square)
 
     def set_None(self, squares):  # make the piece of the square is equal to null
@@ -37,8 +32,17 @@ class WhiteKing(King):
             if square.get_piece() == self:
                 square.set_piece(None)
 
+    def draw_possible_moves(self, squares, selc_x, selc_y):
+        self.set_possible_moves(squares, selc_x, selc_y)
+        for move in self.possibles:
+            x, y = move.get_coordinates()
+            king = King("none", self.piece_id, x, y)
+            king.draw_piece()
+            del king
+
     def move(self, click_x, click_y, squares):  # move the piece to the square
         moves_available = self.possibles
+        print("I was called")
         for move in moves_available:
             x, y = move.get_coordinates()
             if x <= click_x <= x + 85 and y <= click_y <= y + 70:
@@ -51,6 +55,7 @@ class WhiteKing(King):
                     move.piece.x += 1000
                     move.piece.not_active_piece()
                     move.set_piece(self)
+
 
 
 
