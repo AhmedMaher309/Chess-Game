@@ -6,25 +6,21 @@ from pieces.Queen import Queen
 class BlackQueen(Queen):
     def __init__(self, colour, piece_id, x, y):
         self.possibles = []
+        self.possibles2 = []
         super(BlackQueen, self).__init__(colour, piece_id, x, y)
 
-    def draw_possible_moves(self, squares, selc_x, selc_y):
+    def set_possible_moves(self, squares, selc_x, selc_y):
+        self.possibles.clear()
         sx = selc_x
         sy = selc_y
         for square in squares:
             x, y = square.get_coordinates()
             if sx + 85 < x < sx + 170 and sy - 140 < y < sy - 70:
                 if square.get_piece() is None:
-                    queen = Queen("none", self.piece_id, x, y)
-                    queen.draw_piece()
-                    del queen
                     self.possibles.append(square)
                     sx = x
                     sy = y
                 elif square.get_piece() is not None and square.get_piece().piece_id[0] == 'w':
-                    queen = Queen("none", self.piece_id, x, y)
-                    queen.draw_piece()
-                    del queen
                     self.possibles.append(square)
                     break
                 elif square.get_piece() is not None and square.get_piece().piece_id[0] == 'b':
@@ -35,16 +31,10 @@ class BlackQueen(Queen):
             x, y = square.get_coordinates()
             if sx - 170 < x < sx - 85 and sy - 140 < y < sy - 70:
                 if square.get_piece() is None:
-                    queen = Queen("none", self.piece_id, x, y)
-                    queen.draw_piece()
-                    del queen
                     self.possibles.append(square)
                     sx = x
                     sy = y
                 elif square.get_piece() is not None and square.get_piece().piece_id[0] == 'w':
-                    queen = Queen("none", self.piece_id, x, y)
-                    queen.draw_piece()
-                    del queen
                     self.possibles.append(square)
                     break
                 elif square.get_piece() is not None and square.get_piece().piece_id[0] == 'b':
@@ -55,16 +45,10 @@ class BlackQueen(Queen):
             x, y = square.get_coordinates()
             if sx + 85 <= x <= sx + 170 and sy + 70 < y < sy + 140:
                 if square.get_piece() is None:
-                    queen = Queen("none", self.piece_id, x, y)
-                    queen.draw_piece()
-                    del queen
                     self.possibles.append(square)
                     sx = x
                     sy = y
                 elif square.get_piece() is not None and square.get_piece().piece_id[0] == 'w':
-                    queen = Queen("none", self.piece_id, x, y)
-                    queen.draw_piece()
-                    del queen
                     self.possibles.append(square)
                     break
                 elif square.get_piece() is not None and square.get_piece().piece_id[0] == 'b':
@@ -75,16 +59,10 @@ class BlackQueen(Queen):
             x, y = square.get_coordinates()
             if sx - 170 <= x <= sx - 85 and sy + 70 < y < sy + 140:
                 if square.get_piece() is None:
-                    queen = Queen("none", self.piece_id, x, y)
-                    queen.draw_piece()
-                    del queen
                     self.possibles.append(square)
                     sx = x
                     sy = y
                 elif square.get_piece() is not None and square.get_piece().piece_id[0] == 'w':
-                    queen = Queen("none", self.piece_id, x, y)
-                    queen.draw_piece()
-                    del queen
                     self.possibles.append(square)
                     break
                 elif square.get_piece() is not None and square.get_piece().piece_id[0] == 'b':
@@ -95,15 +73,9 @@ class BlackQueen(Queen):
             x, y = square.get_coordinates()
             if sx == x and sy - 140 < y < sy - 70:
                 if square.get_piece() is None:
-                    queen = Queen("none", self.piece_id, x, y)
-                    queen.draw_piece()
-                    del queen
                     self.possibles.append(square)
                     sy = y
                 elif square.get_piece() is not None and square.get_piece().piece_id[0] == 'w':
-                    queen = Queen("none", self.piece_id, x, y)
-                    queen.draw_piece()
-                    del queen
                     self.possibles.append(square)
                     break
                 elif square.get_piece() is not None and square.get_piece().piece_id[0] == 'b':
@@ -113,15 +85,9 @@ class BlackQueen(Queen):
             x, y = square.get_coordinates()
             if sx == x and sy + 70 < y < sy + 140:
                 if square.get_piece() is None:
-                    queen = Queen("none", self.piece_id, x, y)
-                    queen.draw_piece()
-                    del queen
                     self.possibles.append(square)
                     sy = y
                 elif square.get_piece() is not None and square.get_piece().piece_id[0] == 'w':
-                    queen = Queen("none", self.piece_id, x, y)
-                    queen.draw_piece()
-                    del queen
                     self.possibles.append(square)
                     break
                 elif square.get_piece() is not None and square.get_piece().piece_id[0] == 'b':
@@ -132,15 +98,9 @@ class BlackQueen(Queen):
             x, y = square.get_coordinates()
             if sy == y and sx + 85 < x < sx + 170:
                 if square.get_piece() is None:
-                    queen = Queen("none", self.piece_id, x, y)
-                    queen.draw_piece()
-                    del queen
                     self.possibles.append(square)
                     sx = x
                 elif square.get_piece() is not None and square.get_piece().piece_id[0] == 'w':
-                    queen = Queen("none", self.piece_id, x, y)
-                    queen.draw_piece()
-                    del queen
                     self.possibles.append(square)
                     break
                 elif square.get_piece() is not None and square.get_piece().piece_id[0] == 'b':
@@ -151,15 +111,9 @@ class BlackQueen(Queen):
             x, y = square.get_coordinates()
             if sy == y and sx - 170 < x < sx - 85:
                 if square.get_piece() is None:
-                    queen = Queen("none", self.piece_id, x, y)
-                    queen.draw_piece()
-                    del queen
                     self.possibles.append(square)
                     sx = x
                 elif square.get_piece() is not None and square.get_piece().piece_id[0] == 'w':
-                    queen = Queen("none", self.piece_id, x, y)
-                    queen.draw_piece()
-                    del queen
                     self.possibles.append(square)
                     break
                 elif square.get_piece() is not None and square.get_piece().piece_id[0] == 'b':
@@ -169,6 +123,14 @@ class BlackQueen(Queen):
         for square in squares:
             if square.get_piece() == self:
                 square.set_piece(None)
+
+    def draw_possible_moves(self, squares, selc_x, selc_y):
+        self.set_possible_moves(squares, selc_x, selc_y)
+        for move in self.possibles:
+            x, y = move.get_coordinates()
+            queen = Queen("none", self.piece_id, x, y)
+            queen.draw_piece()
+            del queen
 
     def move(self, click_x, click_y, squares):  # move the piece to the square
         moves_available = self.possibles
@@ -184,3 +146,9 @@ class BlackQueen(Queen):
                     move.piece.x += 1000
                     move.piece.not_active_piece()
                     move.set_piece(self)
+
+    def see_king(self, squares, my_x, my_y):
+        self.set_possible_moves(squares, my_x, my_y)
+        for move in self.possibles:
+            if move.get_piece() is not None and move.get_piece().piece_id == "wk":
+                return True
