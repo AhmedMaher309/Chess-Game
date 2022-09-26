@@ -9,7 +9,10 @@ class Player:
         self.win_lose = win_lose
 
     def SetTurn(self):
-        self.MyTurn = 1;
+        self.MyTurn = 1
+
+    def ResetTurn(self):
+        self.MyTurn = 0
 
     def GetTurn(self):
         return self.MyTurn

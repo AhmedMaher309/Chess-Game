@@ -30,3 +30,6 @@ class Piece:
 
     def is_selected(self, click_x, click_y):
         return False
+
+    def get_id(self):
+        return self.piece_id
