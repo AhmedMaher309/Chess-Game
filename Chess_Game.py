@@ -262,7 +262,7 @@ def return_me(square, piece):
     square.set_piece(piece)
 
 
-white_flag = 0
+white_flag = 0  # flag for the white king if checked
 
 while True:  # Game main loop
     display.blit(background_image, (1, 0))
@@ -284,16 +284,17 @@ while True:  # Game main loop
                 for square in squares:
                     if square.get_piece() == my_piece:
                         x_prev, y_prev = square.get_coordinates()
-                        white_square_checked = square
+                        white_square_checked = square  # get the square of the white piece before trying any moves
+                                                       # in case check white happened
 
                 if id[0] == 'w' and WhitePlayer.GetTurn() == 1:
                     move_piece(clicks[2], clicks[3], check_selected_object(clicks[0], clicks[1]).get_piece())
                     WhitePlayer.ResetTurn()
                     BlackPlayer.SetTurn()
                     white_king_checked()
-                white_flag = white_king_checked()
+                white_flag = white_king_checked()  # see if the white king is checked
                 if white_flag == 1:
-                    return_me(white_square_checked, my_piece)
+                    return_me(white_square_checked, my_piece)  # place the piece to its previous position
                     BlackPlayer.ResetTurn()
                     WhitePlayer.SetTurn()
 
