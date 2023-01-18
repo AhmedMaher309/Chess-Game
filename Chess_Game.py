@@ -277,7 +277,8 @@ while True:  # Game main loop
             clicks.append(x)
             clicks.append(y)
             counter += 1
-            if counter == 2 and check_selected_object(clicks[0], clicks[1]).get_piece() is not None:
+            #if counter == 2 and check_selected_object(clicks[0], clicks[1]).get_piece().piece_id is not None:
+            if counter == 2 and check_selected_object(clicks[0], clicks[1]) is not None:
                 id = check_selected_object(clicks[0], clicks[1]).get_piece().piece_id
                 my_piece = check_selected_object(clicks[0], clicks[1]).get_piece()
                 ##################
