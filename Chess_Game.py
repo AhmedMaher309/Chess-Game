@@ -285,7 +285,7 @@ while True:  # Game main loop
                 for square in squares:
                     if square.get_piece() == my_piece:
                         x_prev, y_prev = square.get_coordinates()
-                        white_square_checked = square  # get the square of the white piece before trying any moves
+                        whiteSquareOfMovedPiece = square  # get the square of the white piece before trying any moves
                                                        # in case check white happened
 
                 if id[0] == 'w' and WhitePlayer.GetTurn() == 1:
@@ -295,7 +295,7 @@ while True:  # Game main loop
                     white_king_checked()
                 white_flag = white_king_checked()  # see if the white king is checked
                 if white_flag == 1:
-                    return_me(white_square_checked, my_piece)  # place the piece to its previous position
+                    return_me(whiteSquareOfMovedPiece, my_piece)  # place the piece to its previous position
                     BlackPlayer.ResetTurn()
                     WhitePlayer.SetTurn()
 
