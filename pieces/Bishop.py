@@ -16,11 +16,11 @@ class Bishop(Piece):
         l = 110
         w = 90
         if self.colour == "black":
-            piece_pic = pygame.image.load("images\BlackBishop.bmp")
+            piece_pic = pygame.image.load("images/BlackBishop.bmp")
         elif self.colour == "white":
-            piece_pic = pygame.image.load("images\WhiteBishop.bmp")
+            piece_pic = pygame.image.load("images/WhiteBishop.bmp")
         else:
-            piece_pic = pygame.image.load("images\pred.bmp")
+            piece_pic = pygame.image.load("images/pred.bmp")
             l = 80
             w = 70
         piece_pic = pygame.transform.scale(piece_pic, (l, w))

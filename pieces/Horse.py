@@ -12,11 +12,11 @@ class Horse(Piece):
         l = 110
         w = 90
         if self.colour == "black":
-            piece_pic = pygame.image.load("images\Horse.bmp")
+            piece_pic = pygame.image.load("images/Horse.bmp")
         elif self.colour == "white":
-            piece_pic = pygame.image.load("images\whiteHorse.bmp")
+            piece_pic = pygame.image.load("images/whiteHorse.bmp")
         else:
-            piece_pic = pygame.image.load("images\pred.bmp")
+            piece_pic = pygame.image.load("images/pred.bmp")
             l = 80
             w = 70
         piece_pic = pygame.transform.scale(piece_pic, (l, w))

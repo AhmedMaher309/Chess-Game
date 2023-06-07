@@ -27,7 +27,6 @@ class Square:
             return self.piece
         else:
             return None
-            # print ("NOOOOne")
 
     def is_selected(self, click_x, click_y):
         return (self.x <= click_x - 10) and (self.x >= click_x - 80) and (self.y <= click_y - 30) \

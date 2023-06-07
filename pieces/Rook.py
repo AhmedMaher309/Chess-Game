@@ -16,11 +16,11 @@ class Rook(Piece):
         l = 100
         w = 90
         if self.colour == "black":
-            piece_pic = pygame.image.load("images\BlackRook.bmp")
+            piece_pic = pygame.image.load("images/BlackRook.bmp")
         elif self.colour == "white":
-            piece_pic = pygame.image.load("images\WhiteRook.bmp")
+            piece_pic = pygame.image.load("images/WhiteRook.bmp")
         else:
-            piece_pic = pygame.image.load("images\pred.bmp")
+            piece_pic = pygame.image.load("images/pred.bmp")
             l = 80
             w = 70
         piece_pic = pygame.transform.scale(piece_pic, (l, w))

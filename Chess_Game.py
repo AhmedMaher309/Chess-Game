@@ -28,7 +28,7 @@ pygame.init()
 
 FPS_CLOCK = pygame.time.Clock()
 pygame.display.set_caption("Chess")
-background_image = pygame.image.load("images\chess.bmp")
+background_image = pygame.image.load("images/chess.bmp")
 background_image = pygame.transform.scale(background_image, (800, 650))
 
 counter = 0
